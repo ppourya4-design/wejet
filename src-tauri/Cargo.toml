@@ -1,0 +1,63 @@
+[package]
+name = "wejet"
+version = "1.0.0"
+description = "WEJET — Lightweight Glass Personal Desktop Environment for Windows"
+authors = ["Wejet Contributors"]
+license = "MIT"
+repository = "https://github.com/wejet-desktop/wejet"
+edition = "2021"
+rust-version = "1.77.2"
+
+[lib]
+name = "wejet_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = ["tray-icon", "image-png"] }
+tauri-plugin-autostart = "2"
+tauri-plugin-clipboard-manager = "2"
+tauri-plugin-dialog = "2"
+tauri-plugin-fs = "2"
+tauri-plugin-global-shortcut = "2"
+
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sysinfo = "0.32"
+ureq = { version = "2.12", features = ["json"] }
+arboard = "3.7"
+base64 = "0.22"
+chrono = { version = "0.4", features = ["serde"] }
+dirs = "6"
+image = { version = "0.25", default-features = false, features = ["png", "jpeg", "bmp", "webp"] }
+log = "0.4"
+parking_lot = "0.12"
+sha2 = "0.10"
+thiserror = "2"
+
+[target.'cfg(windows)'.dependencies]
+winreg = "0.52"
+window-vibrancy = "0.8"
+windows = { version = "0.62", features = [
+  "Win32_Foundation",
+  "Win32_Graphics_Dwm",
+  "Win32_Graphics_Gdi",
+  "Win32_System_Com",
+  "Win32_System_Threading",
+  "Win32_UI_Shell",
+  "Win32_UI_WindowsAndMessaging",
+  "Media_Control",
+  "Storage_Streams",
+] }
+
+[dev-dependencies]
+tempfile = "3"
+
+[profile.release]
+lto = true
+opt-level = "z"
+strip = true
+codegen-units = 1
+panic = "abort"
