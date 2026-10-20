@@ -1,0 +1,237 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: var(--wejet-font-sans);
+  color: var(--wejet-text);
+  background: transparent;
+  overflow: hidden;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  color: inherit;
+}
+
+input,
+textarea {
+  user-select: text;
+}
+
+:focus-visible {
+  outline: 2px solid var(--wejet-accent);
+  outline-offset: 2px;
+}
+
+/* Custom minimal scrollbars matching glass aesthetic */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.26);
+  border-radius: var(--wejet-radius-pill);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.44);
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+.ltr-inline {
+  direction: ltr;
+  unicode-bidi: isolate;
+  display: inline-block;
+}
+
+/* 4-Tier Optical Glass Hierarchy */
+.wejet-widget-glass {
+  position: relative;
+  background: color-mix(
+    in srgb,
+    var(--wejet-glass-base) var(--widget-surface-pct, 76%),
+    transparent
+  );
+  backdrop-filter: blur(var(--wejet-blur)) saturate(var(--wejet-saturate));
+  -webkit-backdrop-filter: blur(var(--wejet-blur)) saturate(var(--wejet-saturate));
+  border: 1px solid var(--wejet-glass-border);
+  border-radius: var(--wejet-radius);
+  box-shadow: inset 0 1px 0 var(--wejet-glass-highlight), var(--wejet-shadow);
+  background-image: var(--wejet-ambient-sheen);
+  transition:
+    border-color var(--wejet-anim-fast) var(--wejet-ease),
+    box-shadow var(--wejet-anim-normal) var(--wejet-ease),
+    transform var(--wejet-anim-fast) var(--wejet-ease),
+    background-color var(--wejet-anim-normal) var(--wejet-ease);
+}
+
+.wejet-widget-glass:hover {
+  border-color: var(--wejet-glass-border-strong);
+}
+
+.wejet-elevated-glass {
+  background: var(--wejet-glass-elevated);
+  backdrop-filter: blur(calc(var(--wejet-blur) * 1.35)) saturate(180%);
+  -webkit-backdrop-filter: blur(calc(var(--wejet-blur) * 1.35)) saturate(180%);
+  border: 1px solid var(--wejet-glass-border-strong);
+  border-radius: var(--wejet-radius-lg);
+  box-shadow: inset 0 1px 0 var(--wejet-glass-highlight), var(--wejet-shadow-elevated);
+}
+
+/* Graceful fallback if backdrop-filter is unsupported by GPU driver */
+@supports not ((backdrop-filter: blur(4px)) or (-webkit-backdrop-filter: blur(4px))) {
+  .wejet-widget-glass {
+    background: var(--wejet-glass-solid);
+  }
+  .wejet-elevated-glass {
+    background: var(--wejet-glass-solid);
+  }
+}
+
+/* Reusable Controls */
+.wj-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 7px 14px;
+  border-radius: var(--wejet-radius-sm);
+  border: 1px solid var(--wejet-glass-border);
+  background: var(--wejet-surface-hover);
+  color: var(--wejet-text);
+  font-size: var(--wejet-font-sm);
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    background var(--wejet-anim-fast) var(--wejet-ease),
+    border-color var(--wejet-anim-fast) var(--wejet-ease),
+    transform var(--wejet-anim-fast) var(--wejet-ease);
+}
+
+.wj-btn:hover {
+  background: var(--wejet-surface-active);
+  border-color: var(--wejet-glass-border-strong);
+}
+
+.wj-btn:active {
+  transform: scale(0.97);
+}
+
+.wj-btn-primary {
+  background: var(--wejet-accent);
+  border-color: transparent;
+  color: var(--wejet-accent-contrast);
+  font-weight: 600;
+}
+
+.wj-btn-primary:hover {
+  background: var(--wejet-accent-hover);
+  border-color: transparent;
+}
+
+.wj-btn-danger {
+  background: var(--wejet-danger-soft);
+  border-color: rgba(251, 113, 133, 0.34);
+  color: var(--wejet-danger);
+}
+
+.wj-btn-danger:hover {
+  background: rgba(251, 113, 133, 0.26);
+}
+
+.wj-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border-radius: var(--wejet-radius-xs);
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--wejet-text-secondary);
+  cursor: pointer;
+  transition:
+    background var(--wejet-anim-fast) var(--wejet-ease),
+    color var(--wejet-anim-fast) var(--wejet-ease),
+    transform var(--wejet-anim-fast) var(--wejet-ease);
+}
+
+.wj-icon-btn:hover {
+  background: var(--wejet-surface-hover);
+  color: var(--wejet-text);
+}
+
+.wj-icon-btn:active {
+  transform: scale(0.93);
+}
+
+.wj-input {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: var(--wejet-radius-sm);
+  border: 1px solid var(--wejet-glass-border);
+  background: var(--wejet-input-bg);
+  color: var(--wejet-text);
+  font-size: var(--wejet-font-sm);
+  transition: border-color var(--wejet-anim-fast) var(--wejet-ease);
+}
+
+.wj-input::placeholder {
+  color: var(--wejet-text-muted);
+}
+
+.wj-input:focus {
+  outline: none;
+  border-color: var(--wejet-accent);
+}
+
+.wj-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: var(--wejet-radius-pill);
+  font-size: var(--wejet-font-xs);
+  font-weight: 500;
+  background: var(--wejet-accent-soft);
+  color: var(--wejet-accent);
+}
+
+@keyframes wjFadeScaleIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.wj-animate-in {
+  animation: wjFadeScaleIn var(--wejet-anim-normal) var(--wejet-ease) both;
+}

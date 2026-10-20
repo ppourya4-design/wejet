@@ -1,0 +1,18 @@
+[
+  { "month": 1, "day": 1, "titleFa": "آغاز سال نو و عید نوروز", "titleEn": "Nowruz — Persian New Year", "isHoliday": true },
+  { "month": 1, "day": 2, "titleFa": "عید نوروز", "titleEn": "Nowruz Holiday", "isHoliday": true },
+  { "month": 1, "day": 3, "titleFa": "عید نوروز", "titleEn": "Nowruz Holiday", "isHoliday": true },
+  { "month": 1, "day": 4, "titleFa": "عید نوروز", "titleEn": "Nowruz Holiday", "isHoliday": true },
+  { "month": 1, "day": 13, "titleFa": "روز طبیعت (سیزده‌به‌در)", "titleEn": "Sizdah Bedar — Nature Day", "isHoliday": true },
+  { "month": 2, "day": 1, "titleFa": "روز بزرگداشت سعدی", "titleEn": "Saadi Commemoration Day", "isHoliday": false },
+  { "month": 2, "day": 25, "titleFa": "روز بزرگداشت فردوسی و زبان فارسی", "titleEn": "Ferdowsi & Persian Language Day", "isHoliday": false },
+  { "month": 2, "day": 28, "titleFa": "روز بزرگداشت حکیم عمر خیام", "titleEn": "Omar Khayyam Day", "isHoliday": false },
+  { "month": 4, "day": 1, "titleFa": "آغاز تابستان", "titleEn": "Summer Solstice", "isHoliday": false },
+  { "month": 6, "day": 1, "titleFa": "روز بزرگداشت ابوعلی سینا", "titleEn": "Avicenna Commemoration Day", "isHoliday": false },
+  { "month": 7, "day": 1, "titleFa": "آغاز مهر و پاییز", "titleEn": "Start of Mehr & Autumn", "isHoliday": false },
+  { "month": 7, "day": 20, "titleFa": "روز بزرگداشت حافظ شیرازی", "titleEn": "Hafez Commemoration Day", "isHoliday": false },
+  { "month": 7, "day": 28, "titleFa": "هفته پیوند و بهره‌وری", "titleEn": "Autumn Productivity Week", "isHoliday": false },
+  { "month": 8, "day": 7, "titleFa": "روز بزرگداشت کوروش", "titleEn": "Cyrus the Great Day", "isHoliday": false },
+  { "month": 9, "day": 30, "titleFa": "شب یلدا (چله)", "titleEn": "Yalda Night — Winter Solstice Eve", "isHoliday": false },
+  { "month": 12, "day": 29, "titleFa": "روز ملی شدن صنعت نفت", "titleEn": "Nationalization Day", "isHoliday": true }
+]

@@ -1,0 +1,86 @@
+:root {
+  /* Typography — pure Windows 11 system font stack, zero heavy downloads */
+  --wejet-font-sans: "Segoe UI Variable Display", "Segoe UI Variable Text", "Segoe UI", Tahoma,
+    system-ui, -apple-system, sans-serif;
+  --wejet-font-mono: "Cascadia Code", "Segoe UI Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --wejet-font-xs: 0.72rem;
+  --wejet-font-sm: 0.8125rem;
+  --wejet-font-md: 0.925rem;
+  --wejet-font-lg: 1.125rem;
+  --wejet-font-xl: 1.5rem;
+  --wejet-font-display: 2.85rem;
+
+  /* Spacing & Geometry */
+  --wejet-space-1: 4px;
+  --wejet-space-2: 8px;
+  --wejet-space-3: 12px;
+  --wejet-space-4: 16px;
+  --wejet-space-5: 20px;
+  --wejet-space-6: 24px;
+  --wejet-space-8: 32px;
+
+  --wejet-radius-xs: 8px;
+  --wejet-radius-sm: 11px;
+  --wejet-radius: 18px;
+  --wejet-radius-lg: 24px;
+  --wejet-radius-pill: 999px;
+
+  /* Motion */
+  --wejet-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --wejet-anim-fast: 150ms;
+  --wejet-anim-normal: 220ms;
+
+  /* Default Dark Glass Tokens (overridden dynamically by active theme preset) */
+  --wejet-bg: #0b111e;
+  --wejet-manager-bg: rgba(13, 19, 33, 0.88);
+  --wejet-manager-sidebar: rgba(10, 15, 27, 0.72);
+  --wejet-glass-base: #11192b;
+  --wejet-glass-bg: rgba(17, 25, 43, 0.66);
+  --wejet-glass-elevated: rgba(20, 29, 49, 0.86);
+  --wejet-glass-solid: rgba(24, 34, 56, 0.95);
+  --wejet-glass-border: rgba(255, 255, 255, 0.13);
+  --wejet-glass-border-strong: rgba(255, 255, 255, 0.24);
+  --wejet-glass-highlight: rgba(255, 255, 255, 0.16);
+  --wejet-surface-hover: rgba(255, 255, 255, 0.075);
+  --wejet-surface-active: rgba(255, 255, 255, 0.12);
+  --wejet-input-bg: rgba(8, 13, 24, 0.52);
+
+  --wejet-text: #f4f7fc;
+  --wejet-text-secondary: #cbd5e8;
+  --wejet-text-muted: #8d9db8;
+
+  --wejet-accent: #5cc8ff;
+  --wejet-accent-hover: #7dd4ff;
+  --wejet-accent-soft: rgba(92, 200, 255, 0.16);
+  --wejet-accent-contrast: #061320;
+
+  --wejet-success: #34d399;
+  --wejet-warning: #fbbf24;
+  --wejet-danger: #fb7185;
+  --wejet-danger-soft: rgba(251, 113, 133, 0.16);
+
+  --wejet-blur: 22px;
+  --wejet-saturate: 165%;
+  --wejet-widget-opacity: 0.84;
+
+  --wejet-shadow: 0 14px 36px -8px rgba(3, 8, 18, 0.46), 0 2px 8px rgba(3, 8, 18, 0.24);
+  --wejet-shadow-elevated: 0 28px 68px -12px rgba(2, 6, 16, 0.68), 0 4px 16px rgba(2, 6, 16, 0.35);
+  --wejet-ambient-sheen: radial-gradient(
+    circle at top right,
+    rgba(92, 200, 255, 0.08),
+    transparent 62%
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --wejet-anim-fast: 0ms;
+    --wejet-anim-normal: 0ms;
+  }
+}
+
+[data-reduced-motion="true"] {
+  --wejet-anim-fast: 0ms;
+  --wejet-anim-normal: 0ms;
+}
